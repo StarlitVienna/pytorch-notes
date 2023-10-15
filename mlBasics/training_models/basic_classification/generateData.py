@@ -8,7 +8,7 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 torch.set_default_device(device)
 
 N_SAMPLES = 10000
-X, y = make_circles(N_SAMPLES, noise=0.03, random_state=42)
+X, y = make_circles(N_SAMPLES, noise=0.02, random_state=42)
 
 X_train, X_test, Y_train, Y_test = train_test_split(X,y, train_size=0.8, random_state=42, shuffle=True)
 
