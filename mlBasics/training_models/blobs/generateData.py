@@ -19,8 +19,8 @@ X_train, X_test, Y_train, Y_test = train_test_split(X, Y, train_size=0.8, random
 
 X_train = torch.from_numpy(X_train).to(device).type(torch.float32)
 X_test = torch.from_numpy(X_test).to(device).type(torch.float32)
-Y_train = torch.from_numpy(Y_train).to(device).type(torch.float32)
-Y_test = torch.from_numpy(Y_test).to(device).type(torch.float32)
+Y_train = torch.from_numpy(Y_train).to(device).type(torch.long) # cannot work with float labels for cross entropy loss
+Y_test = torch.from_numpy(Y_test).to(device).type(torch.long)
 
 print(Y_train)
 

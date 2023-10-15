@@ -5,7 +5,8 @@ def train_model(model, optimizer, loss_fn, inputs, labels, epochs):
     model.train()
     for epoch in trange(epochs):
         logits = model(inputs)
-        loss = loss_fn(logits, labels.long())
+        #loss = loss_fn(logits, labels.long()) # for cross entropy loss, labels cannot be of type float or double, must be an integer
+        loss = loss_fn(logits, labels)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
