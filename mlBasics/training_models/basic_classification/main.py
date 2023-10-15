@@ -43,7 +43,12 @@ def main_func():
         #print(preds == Y_train)
         #acc = torch.sum(preds == Y_train)/len(Y_train)
         #print(acc)
-    pass
+    figure, axis = plt.subplots(2,2)
+    axis[0, 0].scatter(X_train[:, 0].cpu(), X_train[:, 1].cpu(), c=Y_train.cpu(), s=4, cmap=plt.cm.RdYlBu, label="Train data")
+    axis[0, 1].scatter(X_test[:, 0].cpu(), X_test[:, 1].cpu(), c=Y_test.cpu(), s=4, cmap=plt.cm.RdYlBu, label="Train data")
+    axis[1, 0].scatter(X_test[:, 0].cpu(), X_test[:, 1].cpu(), c=preds.squeeze().cpu(), s=4, cmap=plt.cm.RdYlBu, label="Train data")
+    plt.legend(prop={"size": 14})
+    plt.show()
 
 if __name__ == "__main__":
     main_func()
