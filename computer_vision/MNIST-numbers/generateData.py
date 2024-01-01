@@ -19,7 +19,6 @@ test_data = datasets.FashionMNIST(root="./datasets/test_fashionMNIST", train=Fal
 
 
 class_names = train_data.classes
-print(class_names[7])
 #print(len(test_data))
 image, label = train_data[0]
 #print(image.shape)
@@ -39,6 +38,7 @@ test_dataloader = DataLoader(dataset=test_data, batch_size=BATCH_SIZE, shuffle=T
 #print(next(iter(train_dataloader.dataset)))
 
 
+#print(class_names[7])
 #plt.imshow(image.squeeze(), cmap="gray")
 #plt.show()
 """
