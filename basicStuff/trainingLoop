@@ -1,0 +1,5 @@
+1. preds
+2. loss
+3. optimizer zero grad
+4. loss backward (loss.backward no S at the end)
+5. optimizer step
